@@ -35,6 +35,7 @@ describe('Fluxo de compra', () => {
     carrinhoPage.irParaCheckout();
     cy.wait(5000);
     carrinhoPage.irParaCheckout();
+    cy.wait(5000);
     checkoutPage.preencherEndereco(dadosEndereco);
     checkoutPage.clicarNext();
     cy.wait(5000);
