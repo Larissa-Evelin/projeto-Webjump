@@ -1,0 +1,41 @@
+{
+  "produtos": [
+    {
+      "nome": "Affirm Water Bottle",
+      "url": "affirm-water-bottle.html",
+      "preco": "$7.00",
+      "opcoes": {
+        "tamanho": ["32", "40"],
+        "cor": ["Black", "White"]
+      }
+    },
+    {
+      "nome": "Fusion Backpack",
+      "url": "fusion-backpack.html",
+      "preco": "$59.00",
+      "opcoes": {
+        "tamanho": ["M", "L"],
+        "cor": ["Blue", "Red"]
+      }
+    },
+        {
+      "nome": "Rival Field Messenger",
+      "url": "rival-field-messenger.html",
+      "preco": "$45.00",
+        "opcoes": {
+        "tamanho": [],
+        "cor": []
+      }
+    },
+    {
+      "nome": "Kratos Gym Pant",
+      "url": "kratos-gym-pant.html",
+      "preco": "$57.00",
+      "opcoes": {
+        "tamanho": ["32", "33"],
+        "cor": ["Black", "Blue"]
+      }
+
+    }
+  ]
+}
