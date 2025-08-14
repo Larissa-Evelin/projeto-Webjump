@@ -37,17 +37,17 @@ cd projeto-cypress
 
 Instale as dependências:
 -> npm install
-# ou
+ou
 -> yarn install
 
 4. Execução dos testes
 
 4.1. Abrir Cypress
 -> npx cypress open
-O Cypress abrirá uma interface gráfica.
+O Cypress abrirá uma interface gráfica. (usar o navegador Chrome)
 Selecione o teste desejado e clique para executar.
 
-5.2. Executar testes em modo headless (terminal)
+5.2. Executar testes em modo headless (terminal , usar o navegador Chrome)
 npx cypress run
 
 6. Descrição dos cenários
