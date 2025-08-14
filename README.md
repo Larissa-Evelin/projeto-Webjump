@@ -6,94 +6,126 @@ Este projeto tem como objetivo implementar cenários de testes automatizados uti
 
 Os fluxos principais implementados são:
 
-Cadastro de usuário
-Login
-Adicionar produto ao carrinho
-Finalização de compra
+-> Cadastro de usuário
+
+-> Login
+
+-> Adicionar produto ao carrinho
+
+-> Finalização de compra
 
 Cenários opcionais:
-Esqueci minha senha
 
-Adicionar produto ao carrinho em fluxos alternativos:
-Página de produto
-Busca
+-> Esqueci minha senha
 
-Validação do pedido realizado:
-Lista de pedido
-Detalhe do pedido
+-> Adicionar produto ao carrinho em fluxos alternativos:
+
+-> Página de produto
+
+-> Busca
+
+-> Validação do pedido realizado:
+
+-> Lista de pedido
+
+-> Detalhe do pedido
 
 2. Pré-requisitos
 
 Antes de iniciar, é necessário ter instalado:
-Node.js (versão 18 ou superior recomendada)
-npm ou yarn
-Git (para clonar o repositório)
+
+-> Node.js (versão 18 ou superior recomendada)
+
+-> npm ou yarn
+
+->Git (para clonar o repositório)
 
 3. Instalação do projeto
 
 Clone o repositório ou baixe o projeto:
 git clone <git@github.com:Larissa-Evelin/projeto-Webjump.git>
+
 cd projeto-cypress
 
-Instale as dependências:
--> npm install
-ou
--> yarn install
+Instale as dependências: npm install ou yarn install
 
 4. Execução dos testes
 
-4.1. Abrir Cypress
+Abrir Cypress
+
 -> npx cypress open
+
 O Cypress abrirá uma interface gráfica. (usar o navegador Chrome)
 Selecione o teste desejado e clique para executar.
 
-5.2. Executar testes em modo headless (terminal , usar o navegador Chrome)
-npx cypress run
+5. Executar testes em modo headless (terminal , usar o navegador Chrome)
 
-6. Descrição dos cenários
-6.1. Fluxos principais
+-> npx cypress run
 
-Cadastro de usuário:
-Preencher formulário com dados do usuário.
-Validar sucesso do cadastro.
+6. Descrição dos cenários: Fluxos principais
 
-Login:
-Acessar a tela de login.
-Inserir usuário e senha válidos.
-Validar acesso ao sistema.
+-> Cadastro de usuário:
 
-Adicionar produto ao carrinho:
-Selecionar produto na página inicial ou na busca.
-Adicionar ao carrinho.
-Validar se o produto foi adicionado.
+-> Preencher formulário com dados do usuário
 
-Finalização de compra:
+-> Validar sucesso do cadastro
 
-Acessar o carrinho.
-Preencher dados de pagamento e envio.
-Confirmar pedido.
-Validar sucesso da compra.
+-> Login:
 
-6.2. Cenários opcionais
+-> Acessar a tela de login
+
+-> Inserir usuário e senha válidos
+
+-> Validar acesso ao sistema
+
+-> Adicionar produto ao carrinho:
+
+-> Selecionar produto na página inicial ou na busca
+
+-> Adicionar ao carrinho
+
+-> Validar se o produto foi adicionado
+
+-> Finalização de compra:
+
+-> Acessar o carrinho
+
+-> Preencher dados de pagamento e envio
+
+-> Confirmar pedido
+
+-> Validar sucesso da compra
+
+7. Cenários opcionais
 
 Esqueci minha senha:
-Acessar a tela “Esqueci minha senha”.
-Solicitar redefinição de senha.
 
-Validar envio do email:
-Adicionar produto ao carrinho em fluxos alternativos
+-> Acessar a tela “Esqueci minha senha”
 
-2.1. Página de produto
-Acessar a página do produto.
-Adicionar ao carrinho.
+-> Solicitar redefinição de senha
 
-2.2. Busca 
-Buscar produto usando a barra de pesquisa.
-Adicionar produto encontrado ao carrinho.
-Validação do pedido realizado 
+-> Validar envio do email:
 
-3.1. Lista de pedido
-Verificar se o pedido aparece na lista de pedidos do usuário.
+-> Adicionar produto ao carrinho em fluxos alternativos
 
-3.2. Detalhe do pedido
-Acessar detalhes do pedido e validar informações.
+-> Página de produto
+
+-> Acessar a página do produto
+
+-> Adicionar ao carrinho
+
+-> Busca:
+
+-> Buscar produto usando a barra de pesquisa
+
+-> Adicionar produto encontrado ao carrinho
+
+-> Validação do pedido realizado 
+
+-> Lista de pedido
+
+-> Verificar se o pedido aparece na lista de pedidos do usuário
+
+-> Detalhe do pedido
+
+-> Acessar detalhes do pedido e validar informações
