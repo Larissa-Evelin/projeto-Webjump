@@ -56,24 +56,25 @@ Se aparecer a versão, está tudo certo.
 4. No **Windows**, a instalação ainda precisa ser pelo **Site oficial**, 
 
 > **Link download nodejs:** https://www.nodejs.tech/pt-br/download
+
 > **Link download npm:** https://www.npmjs.com/package/download
 
 # Instalação do Projeto
 
-Abrir o terminal no local onde deseja salvar o projeto.
+1. Abrir o terminal no local onde deseja salvar o projeto.
 
-### Clonar o repositório:
-
+2. Clonar o repositório, digite no terminal:
 git clone git@github.com:Larissa-Evelin/projeto-Webjump.git
 
-Entrar na pasta do projeto:
+3. Entrar na pasta do projeto:
 cd projeto-cypress
 
-Instalar as dependências:
+4. Instalar as dependências:
 npm install
 
- Execução dos Testes
- Abrir Cypress com interface gráfica
+> **Execução dos Testes**
+
+1. Abrir Cypress com interface gráfica:
 npx cypress open
 
 
@@ -87,10 +88,12 @@ npx cypress open
 
 npx cypress run
 
-🔹Executa os testes diretamente no terminal.
-Usa o Chrome por padrão.
+> **Executa os testes diretamente no terminal**
 
- Cenários de Teste
+Usa o Chrome por padrão: npx cypress run --browser chrome
+
+### Cenários de Teste
+
 🔹 Fluxos principais
 Cadastro de usuário
 
@@ -125,6 +128,7 @@ Confirmar pedido.
 Validar sucesso da compra.
 
 🔹 Cenários opcionais
+
 Esqueci minha senha
 
 Acessar a tela “Esqueci minha senha”.
