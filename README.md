@@ -1,131 +1,139 @@
-Documentação do Projeto Cypress – Automação de Testes
+# 📄 Documentação do Projeto Cypress – Automação de Testes
 
-1. Objetivo
+## 🎯 Objetivo
+Este projeto foi desenvolvido para criar e executar **cenários de testes automatizados** utilizando **Cypress** e **TypeScript**, seguindo **boas práticas de código** para manter os testes **claros, organizados e confiáveis**.
 
-Este projeto tem como objetivo implementar cenários de testes automatizados utilizando Cypress e TypeScript, aplicando boas práticas de código para garantir legibilidade, manutenção e confiabilidade dos testes.
+Os principais fluxos automatizados são:
 
-Os fluxos principais implementados são:
+- 📝 **Cadastro de usuário**
+- 🔐 **Login**
+- 🛒 **Adicionar produto ao carrinho**
+- 💳 **Finalização de compra**
 
--> Cadastro de usuário
+Cenários extras:
 
--> Login
+- 🔑 **Esqueci minha senha**
+- 🛒 **Adicionar produto ao carrinho por outros caminhos:**
+  - Pela **página do produto**
+  - Pela **busca**
+- 📦 **Validação de pedido realizado:**
+  - Pela **lista de pedidos**
+  - Pelo **detalhe do pedido**
 
--> Adicionar produto ao carrinho
+---
 
--> Finalização de compra
+## ⚙️ Pré-requisitos
+Antes de rodar o projeto, é necessário ter instalado no computador:
 
-Cenários opcionais:
+1. **Node.js** (versão 18 ou superior recomendada)
+2. **npm** (vem junto com o Node) ou **yarn**
+3. **Git** (para clonar o repositório)
 
--> Esqueci minha senha
+> **Dica:** Para verificar se você já tem o Node e o npm instalados:
+```bash
+node -v
+npm -v
+📥 Instalação do Projeto
+Abrir o terminal no local onde deseja salvar o projeto.
 
--> Adicionar produto ao carrinho em fluxos alternativos:
+Clonar o repositório:
 
--> Página de produto
+bash
+Copiar
+Editar
+git clone git@github.com:Larissa-Evelin/projeto-Webjump.git
+Entrar na pasta do projeto:
 
--> Busca
-
--> Validação do pedido realizado:
-
--> Lista de pedido
-
--> Detalhe do pedido
-
-2. Pré-requisitos
-
-Antes de iniciar, é necessário ter instalado:
-
--> Node.js (versão 18 ou superior recomendada)
-
--> npm ou yarn
-
-->Git (para clonar o repositório)
-
-3. Instalação do projeto
-
-Clone o repositório ou baixe o projeto:
-git clone <git@github.com:Larissa-Evelin/projeto-Webjump.git>
-
+bash
+Copiar
+Editar
 cd projeto-cypress
+Instalar as dependências:
 
-Instale as dependências: npm install ou yarn install
+bash
+Copiar
+Editar
+npm install
+ou, se preferir usar yarn:
 
-4. Execução dos testes
+bash
+Copiar
+Editar
+yarn install
+🚀 Execução dos Testes
+🖥️ Abrir Cypress com interface gráfica
+bash
+Copiar
+Editar
+npx cypress open
+Abre uma janela gráfica do Cypress.
 
-Abrir Cypress
+Selecione o navegador Chrome.
 
--> npx cypress open
+Escolha o teste e clique para executar.
 
-O Cypress abrirá uma interface gráfica. (usar o navegador Chrome)
-Selecione o teste desejado e clique para executar.
+📡 Rodar testes no terminal (modo headless)
+bash
+Copiar
+Editar
+npx cypress run
+Executa os testes diretamente no terminal.
 
-5. Executar testes em modo headless (terminal , usar o navegador Chrome)
+Usa o Chrome por padrão.
 
--> npx cypress run
+Gera relatório com o resultado dos testes.
 
-6. Descrição dos cenários: Fluxos principais
+📚 Cenários de Teste
+🔹 Fluxos principais
+Cadastro de usuário
 
--> Cadastro de usuário:
+Preencher formulário com os dados do usuário.
 
--> Preencher formulário com dados do usuário
+Validar sucesso do cadastro.
 
--> Validar sucesso do cadastro
+Login
 
--> Login:
+Acessar a tela de login.
 
--> Acessar a tela de login
+Inserir usuário e senha válidos.
 
--> Inserir usuário e senha válidos
+Validar acesso ao sistema.
 
--> Validar acesso ao sistema
+Adicionar produto ao carrinho
 
--> Adicionar produto ao carrinho:
+Selecionar produto na página inicial ou pela busca.
 
--> Selecionar produto na página inicial ou na busca
+Adicionar ao carrinho.
 
--> Adicionar ao carrinho
+Validar se o produto foi adicionado.
 
--> Validar se o produto foi adicionado
+Finalização de compra
 
--> Finalização de compra:
+Acessar o carrinho.
 
--> Acessar o carrinho
+Preencher dados de pagamento e envio.
 
--> Preencher dados de pagamento e envio
+Confirmar pedido.
 
--> Confirmar pedido
+Validar sucesso da compra.
 
--> Validar sucesso da compra
+🔹 Cenários opcionais
+Esqueci minha senha
 
-7. Cenários opcionais
+Acessar a tela “Esqueci minha senha”.
 
-Esqueci minha senha:
+Solicitar redefinição de senha.
 
--> Acessar a tela “Esqueci minha senha”
+Validar envio do e-mail.
 
--> Solicitar redefinição de senha
+Adicionar produto ao carrinho por fluxos alternativos
 
--> Validar envio do email:
+Página de produto: acessar página do produto → adicionar ao carrinho.
 
--> Adicionar produto ao carrinho em fluxos alternativos
+Busca: buscar produto na barra de pesquisa → adicionar ao carrinho.
 
--> Página de produto
+Validação do pedido realizado
 
--> Acessar a página do produto
+Lista de pedidos: verificar se o pedido aparece na lista.
 
--> Adicionar ao carrinho
-
--> Busca:
-
--> Buscar produto usando a barra de pesquisa
-
--> Adicionar produto encontrado ao carrinho
-
--> Validação do pedido realizado 
-
--> Lista de pedido
-
--> Verificar se o pedido aparece na lista de pedidos do usuário
-
--> Detalhe do pedido
-
--> Acessar detalhes do pedido e validar informações
+Detalhe do pedido: acessar detalhes do pedido e validar informações.
