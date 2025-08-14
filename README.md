@@ -30,58 +30,65 @@ Antes de rodar o projeto, é necessário ter instalado no computador:
 3. **Git** (para clonar o repositório)
 
 > **Dica:** Para verificar se você já tem o Node e o npm instalados:
-```bash
+
+##  Digite no terminal cmd (Prompt de Comando) para verificar versões instaladas
+
 node -v
 npm -v
- Instalação do Projeto
+
+##  Instalando Node.js e npm via terminal (Linux / Mac) caso não tenha instalado
+
+1. Atualize os pacotes:
+- **Digite no terminal cmd (Prompt de Comando)**
+sudo apt update        # Para Debian/Ubuntu
+sudo yum update        # Para CentOS/Fedora
+
+2. Instale o Node.js e npm:
+sudo apt install nodejs npm        # Debian/Ubuntu
+sudo yum install nodejs npm        # CentOS/Fedora
+
+3. Verifique a instalação:
+node -v
+npm -v
+
+Se aparecer a versão, está tudo certo.
+
+4. No **Windows**, a instalação ainda precisa ser pelo **Site oficial**, 
+
+> **Link download nodejs:** https://www.nodejs.tech/pt-br/download
+> **Link download npm:** https://www.npmjs.com/package/download
+
+# Instalação do Projeto
+
 Abrir o terminal no local onde deseja salvar o projeto.
 
-Clonar o repositório:
+### Clonar o repositório:
 
-bash
-Copiar
-Editar
 git clone git@github.com:Larissa-Evelin/projeto-Webjump.git
+
 Entrar na pasta do projeto:
-
-bash
-Copiar
-Editar
 cd projeto-cypress
+
 Instalar as dependências:
-
-bash
-Copiar
-Editar
 npm install
-ou, se preferir usar yarn:
 
-bash
-Copiar
-Editar
-yarn install
  Execução dos Testes
  Abrir Cypress com interface gráfica
-bash
-Copiar
-Editar
 npx cypress open
-Abre uma janela gráfica do Cypress.
 
-Selecione o navegador Chrome.
 
-Escolha o teste e clique para executar.
+> **Abre uma janela gráfica do Cypress**
 
- Rodar testes no terminal (modo headless)
-bash
-Copiar
-Editar
+1. Selecione o navegador Chrome.
+
+2. Escolha o teste e clique para executar.
+
+>  **Rodar testes no terminal (modo headless)**
+
 npx cypress run
-Executa os testes diretamente no terminal.
 
+🔹Executa os testes diretamente no terminal.
 Usa o Chrome por padrão.
-
-Gera relatório com o resultado dos testes.
 
  Cenários de Teste
 🔹 Fluxos principais
