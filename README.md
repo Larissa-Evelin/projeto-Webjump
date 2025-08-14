@@ -1,28 +1,28 @@
-# 📄 Documentação do Projeto Cypress – Automação de Testes
+#  Documentação do Projeto Cypress – Automação de Testes
 
-## 🎯 Objetivo
+##  Objetivo
 Este projeto foi desenvolvido para criar e executar **cenários de testes automatizados** utilizando **Cypress** e **TypeScript**, seguindo **boas práticas de código** para manter os testes **claros, organizados e confiáveis**.
 
 Os principais fluxos automatizados são:
 
-- 📝 **Cadastro de usuário**
-- 🔐 **Login**
-- 🛒 **Adicionar produto ao carrinho**
-- 💳 **Finalização de compra**
+-  **Cadastro de usuário**
+-  **Login**
+-  **Adicionar produto ao carrinho**
+-  **Finalização de compra**
 
 Cenários extras:
 
-- 🔑 **Esqueci minha senha**
-- 🛒 **Adicionar produto ao carrinho por outros caminhos:**
+-  **Esqueci minha senha**
+-  **Adicionar produto ao carrinho por outros caminhos:**
   - Pela **página do produto**
   - Pela **busca**
-- 📦 **Validação de pedido realizado:**
+-  **Validação de pedido realizado:**
   - Pela **lista de pedidos**
   - Pelo **detalhe do pedido**
 
 ---
 
-## ⚙️ Pré-requisitos
+##  Pré-requisitos
 Antes de rodar o projeto, é necessário ter instalado no computador:
 
 1. **Node.js** (versão 18 ou superior recomendada)
@@ -33,7 +33,7 @@ Antes de rodar o projeto, é necessário ter instalado no computador:
 ```bash
 node -v
 npm -v
-📥 Instalação do Projeto
+ Instalação do Projeto
 Abrir o terminal no local onde deseja salvar o projeto.
 
 Clonar o repositório:
@@ -60,8 +60,8 @@ bash
 Copiar
 Editar
 yarn install
-🚀 Execução dos Testes
-🖥️ Abrir Cypress com interface gráfica
+ Execução dos Testes
+ Abrir Cypress com interface gráfica
 bash
 Copiar
 Editar
@@ -72,7 +72,7 @@ Selecione o navegador Chrome.
 
 Escolha o teste e clique para executar.
 
-📡 Rodar testes no terminal (modo headless)
+ Rodar testes no terminal (modo headless)
 bash
 Copiar
 Editar
@@ -83,7 +83,7 @@ Usa o Chrome por padrão.
 
 Gera relatório com o resultado dos testes.
 
-📚 Cenários de Teste
+ Cenários de Teste
 🔹 Fluxos principais
 Cadastro de usuário
 
