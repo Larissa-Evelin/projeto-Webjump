@@ -28,6 +28,7 @@ Antes de rodar o projeto, é necessário ter instalado no computador:
 1. **Node.js** (versão 18 ou superior recomendada)
 2. **npm** (vem junto com o Node) ou **yarn**
 3. **Git** (para clonar o repositório)
+> **Obs:** A suíte só pode ser executada uma única vez, pois o ideal seria excluir o e-mail criado para reutilização. Como não é possível apagar o e-mail, o script cria esse e-mail e o utiliza nos demais testes. Dessa forma, a suíte não pode ser rodada novamente, a menos que o e-mail de cadastro dos usuários seja alterado no arquivo JSON
 
 > **Dica:** Para verificar se você já tem o Node e o npm instalados:
 
