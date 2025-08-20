@@ -114,7 +114,7 @@ git commit -m "Teste projeto"
 
 5. Agora envie para o repositório remoto:
 
-git push
+git push 
 
 > **Acesse a aba Actions no GitHub para acompanhar a execução da pipeline e o resultado da suíte de testes.**
 
