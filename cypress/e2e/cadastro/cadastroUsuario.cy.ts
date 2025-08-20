@@ -16,7 +16,7 @@ describe('Cadastro de Usuário', () => {
       usuario.email = gerarEmailUnico(); // altera apenas o email e gera um email aleatório
       const usuarioParaCadastro = { ...usuario, email: gerarEmailUnico() };
       cy.writeFile("cypress/fixtures/usuarios.json", usuario); // salva o objeto completo de volta
-
+      
       cy.intercept('POST', '/customer/account/createpost').as('submitCadastro');
 
       cadastroPage.visitar();

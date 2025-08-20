@@ -1,9 +1,9 @@
-  export class CarrinhoPage {
+export class CarrinhoPage {
     visitarProduto(produtoUrl: string) {
       cy.visit(`/${produtoUrl}`);
     }
 
-      visitarCategoria(categoriaUrl: string) {
+    visitarCategoria(categoriaUrl: string) {
       cy.visit(`/collections/${categoriaUrl}.html`);
     }
 
@@ -12,14 +12,12 @@
     }
 
     adicionarAoCarrinho() {
-  cy.get('#product-addtocart-button', { timeout: 5000 }).click();
-}
-
+      cy.get('#product-addtocart-button', { timeout: 5000 }).click();
+    }
 
     adicionarDaListagem(nomeProduto: string) {
-      cy.contains('.product-item', nomeProduto)
-      .find('button[title="Add to Cart"]')
-      .click({ force: true });
+      cy.contains('.product-item', nomeProduto, { timeout: 50000 }).click();
+      cy.get('button[title="Add to Cart"]', { timeout: 50000 }).click({ force: true });
     }
 
     selecionarOpcao(nomeOpcao: string) {
@@ -27,7 +25,7 @@
       .filter(`[aria-label="${nomeOpcao}"]`)
       .first()
       .click({ force: true }); 
-   }
+    } 
 
     abrirCarrinho() {
       cy.get('a.action.showcart', { timeout: 20000 })
