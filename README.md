@@ -27,10 +27,6 @@ Antes de rodar o projeto, é necessário ter instalado no computador:
 1. **Node.js** (versão 18 ou superior recomendada)
 2. **npm** (vem junto com o Node) ou **yarn**
 3. **Git** (para clonar o repositório e enviar alterações para o repositório remoto)
-> **Obs:** Caso seja executado apenas o teste de finalizar compra pela segunda vez, sem passar por todo o fluxo completo, ocorrerá erro.
-Isso acontece porque não foi criada uma lógica para tratar a situação em que o endereço já está cadastrado utilizando o mesmo e-mail de lpgin.
-O ideal seria remover todos os dados previamente para que o teste pudesse ser reutilizado posteriormente.
-Como essa lógica ainda não foi implementada, o teste de finalizar compra, quando executado isoladamente pela segunda vez, acaba falhando.
 
 > **Dica:** Para verificar se você já tem o Node e o npm instalados:
 
@@ -104,19 +100,15 @@ Para acompanhar, siga os passos abaixo:
 
 2. Faça uma alteração simples no código (ex.: adicionar um espaço ou comentário)
 
-3. No terminal do VSCode, dentro da pasta do projeto, execute:
+3. No terminal do VSCode, dentro da pasta do projeto, execute: git add .
 
- git add .
+4. Em seguida, faça o commit: git commit -m "Teste projeto" 
 
-4. Em seguida, faça o commit:
-
-git commit -m "Teste projeto" 
-
-5. Agora envie para o repositório remoto:
-
-git push 
+5. Agora envie para o repositório remoto: git push 
 
 > **Acesse a aba Actions no GitHub para acompanhar a execução da pipeline e o resultado da suíte de testes.**
+
+> **Obs:** Para que outro usuário possa modificar o projeto e visualizar a pipeline sendo executada, é necessário adicioná-lo como colaborador no meu repositório do GitHub. Dessa forma, ele terá permissão de escrita (write) e poderá realizar alterações e enviar (push) diretamente para o repositório.
 
 ### Cenários de Teste
 
