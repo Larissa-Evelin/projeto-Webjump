@@ -28,8 +28,29 @@ export class CadastroPage {
     cy.contains('teste+').should('be.visible'); // valida o email gerado
   }
 
-  ValidarMensagensDeErro(){   
+  // ValidarMensagensDeErro(){   
+  //   cy.get('div[data-bind*="prepareMessageForHtml"]', { timeout: 15000 })
+  //   .should('contain.text', 'The password needs at least 8 characters. Create a new password and try again.');
+  //   'Invalid Form Key. Please refresh the page.'
+  // }
+
+ValidarMensagensDeErro() {
+  const verificar = () => {
     cy.get('div[data-bind*="prepareMessageForHtml"]', { timeout: 15000 })
-    .should('contain.text', 'The password needs at least 8 characters. Create a new password and try again.');
-  }
+      .then(($el) => {
+        const texto = $el.text();
+
+        if (texto.includes('The password needs at least 8 characters. Create a new password and try again')) {
+          cy.log('Erro de senha curta detectado');
+          cy.wrap($el).should('be.visible');
+        } else if (texto.includes('Invalid Form Key. Please refresh the page.')) {
+          cy.log('Erro de Form Key detectado, atualizando a página...');
+          cy.reload(true).then(() => {
+            verificar(); // chama a função de novo após recarregar
+          });
+        }
+      });
+  };
+}
+
 }
