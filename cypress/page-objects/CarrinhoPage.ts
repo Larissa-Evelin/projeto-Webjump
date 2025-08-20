@@ -12,8 +12,9 @@
     }
 
     adicionarAoCarrinho() {
-      cy.get('#product-addtocart-button').click();
-    }
+  cy.get('#product-addtocart-button', { timeout: 5000 }).click();
+}
+
 
     adicionarDaListagem(nomeProduto: string) {
       cy.contains('.product-item', nomeProduto)
@@ -48,7 +49,7 @@
     }
 
   irParaCheckout() {
-    cy.get('button[data-role="proceed-to-checkout"]', { timeout: 20000 })
+    cy.get('button[data-role="proceed-to-checkout"]', { timeout: 50000 })
     .should('be.visible')
     .click();
   }

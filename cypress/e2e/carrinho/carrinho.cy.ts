@@ -14,7 +14,7 @@ const produtos: IProduto[] = produtosJson;
 describe('Fluxo de adicionar ao carrinho', () => {
 
  beforeEach(() => {
-    const usuario: IUsuario = usuarios[0]; 
+    const usuario: IUsuario = usuarios; 
     loginPage.visitar();
     loginPage.preencherFormulario(usuario);
     loginPage.enviar();

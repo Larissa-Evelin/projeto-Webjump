@@ -1,11 +1,12 @@
+
 {
-  "nome": "Itachi",
-  "sobrenome": "Uchiha",
-  "company": "Informatica",
-  "email": "itachi.uchiha12@example.com",
-  "country": "Brazil",
-  "State": "492",
-  "city": "Goiânia",
-  "postalCode": "12345",
-  "telefone": "11999999999"
+    "nome": "Itachi",
+    "sobrenome": "Uchiha",
+    "company": "Informatica",
+    "street": "Rua 29",
+    "country": "Brazil",
+    "State": "492",
+    "city": "Goiânia",
+    "postalCode": "12345",
+    "telefone": "11999999999"
 }

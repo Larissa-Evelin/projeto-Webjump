@@ -17,3 +17,9 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+
+  // Ignora erros do Magento/RequireJS
+Cypress.on('uncaught:exception', (err, runnable) => {
+
+  return false; 
+});

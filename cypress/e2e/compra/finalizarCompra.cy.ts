@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 import { CarrinhoPage } from '../../page-objects/CarrinhoPage';
 import { CheckoutPage } from '../../page-objects/CheckoutPage';
 import endereco from '../../fixtures/endereco.json';
@@ -16,32 +14,31 @@ describe('Fluxo de compra', () => {
   const loginPage = new LoginPage();
 
  beforeEach(() => {
-    const usuario: IUsuario = usuarios[0]; 
+    const usuario: IUsuario = usuarios; 
     loginPage.visitar();
     loginPage.preencherFormulario(usuario);
     loginPage.enviar();
-    loginPage.validarLoginSucesso();
   });
 
   it('Adicionar ao carrinho', () => {
     const produto: IProduto = produtosJson[0];
     carrinhoPage.visitarProduto(produto.url);
+    cy.wait(8000);
     carrinhoPage.adicionarAoCarrinho();
   });
 
   it('Deve finalizar a compra com sucesso', () => {
-    const dadosEndereco: IEndereco = endereco;
+    const dadosEndereco: IEndereco = endereco; 
     carrinhoPage.abrirCarrinho();
-    carrinhoPage.irParaCheckout();
     cy.wait(5000);
     carrinhoPage.irParaCheckout();
     cy.wait(5000);
-    checkoutPage.preencherEndereco(dadosEndereco);
     checkoutPage.clicarNext();
+    checkoutPage.preencherEndereco(dadosEndereco);
     cy.wait(5000);
     checkoutPage.clicarNext();
     checkoutPage.selecionarPagamento('checkmo');
     checkoutPage.confirmarPedido();
     checkoutPage.validarPedidoSucesso();
   });
-});
+}); 

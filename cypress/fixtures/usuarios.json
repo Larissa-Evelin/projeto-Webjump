@@ -1,14 +1,6 @@
-[
-  {
-    "nome": "Itachi",
-    "sobrenome": "Uchiha",
-    "email": "itachi.uchiha40@example.com",
-    "senha": "Senha123"
-  },
-  {
-    "nome": "Sasuke",
-    "sobrenome": "Uchiha",
-    "email": "sasuke.uchiha41@example.com",
-    "senha": "Senha456"
-  }
-]
+{
+  "nome": "Sasuke",
+  "sobrenome": "Uchiha",
+  "email": "teste+1755687668206@exemplo.com",
+  "senha": "Senha456"
+}

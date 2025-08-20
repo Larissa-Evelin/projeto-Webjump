@@ -12,7 +12,6 @@ Os principais fluxos automatizados são:
 
 Cenários extras:
 
--  **Esqueci minha senha**
 -  **Adicionar produto ao carrinho por outros caminhos:**
   - Pela **página do produto**
   - Pela **busca**
@@ -27,8 +26,11 @@ Antes de rodar o projeto, é necessário ter instalado no computador:
 
 1. **Node.js** (versão 18 ou superior recomendada)
 2. **npm** (vem junto com o Node) ou **yarn**
-3. **Git** (para clonar o repositório)
-> **Obs:** A suíte só pode ser executada uma única vez, pois o ideal seria excluir o e-mail criado para reutilização. Como não é possível apagar o e-mail, o script cria esse e-mail e o utiliza nos demais testes. Dessa forma, a suíte não pode ser rodada novamente, a menos que o e-mail de cadastro dos usuários seja alterado no arquivo JSON
+3. **Git** (para clonar o repositório e enviar alterações para o repositório remoto)
+> **Obs:** Caso seja executado apenas o teste de finalizar compra pela segunda vez, sem passar por todo o fluxo completo, ocorrerá erro.
+Isso acontece porque não foi criada uma lógica para tratar a situação em que o endereço já está cadastrado utilizando o mesmo e-mail de lpgin.
+O ideal seria remover todos os dados previamente para que o teste pudesse ser reutilizado posteriormente.
+Como essa lógica ainda não foi implementada, o teste de finalizar compra, quando executado isoladamente pela segunda vez, acaba falhando.
 
 > **Dica:** Para verificar se você já tem o Node e o npm instalados:
 
@@ -96,13 +98,13 @@ Usa o Chrome por padrão: npx cypress run --browser chrome
 ### Cenários de Teste
 
 🔹 Fluxos principais
-Cadastro de usuário
+🔹 Cadastro de usuário
 
 Preencher formulário com os dados do usuário.
 
 Validar sucesso do cadastro.
 
-Login
+🔹Login
 
 Acessar a tela de login.
 
@@ -110,42 +112,31 @@ Inserir usuário e senha válidos.
 
 Validar acesso ao sistema.
 
-Adicionar produto ao carrinho
+Inserir usuário e senha inválidos
 
-Selecionar produto na página inicial ou pela busca.
+Validar a exibição da mensagem de erro
 
-Adicionar ao carrinho.
+🔹 Adicionar produto ao carrinho
 
-Validar se o produto foi adicionado.
+Selecionar produto na página inicial ou pela busca
 
-Finalização de compra
+Buscar produto na barra de pesquisa
 
-Acessar o carrinho.
+Adicionar ao carrinho
 
-Preencher dados de pagamento e envio.
+Adicionar ao carrinho com seleção de tamanho e cor
 
-Confirmar pedido.
+Validar se o produto foi adicionado
 
-Validar sucesso da compra.
+Listagem de produtos
 
-🔹 Cenários opcionais
+🔹Finalização de compra
 
-Esqueci minha senha
+Adicionar ao carrinho
 
-Acessar a tela “Esqueci minha senha”.
+Preencher dados de pagamento e envio
 
-Solicitar redefinição de senha.
-
-Validar envio do e-mail.
-
-Adicionar produto ao carrinho por fluxos alternativos
-
-Página de produto: acessar página do produto → adicionar ao carrinho.
-
-Busca: buscar produto na barra de pesquisa → adicionar ao carrinho.
+Confirmar pedido
 
 Validação do pedido realizado
 
-Lista de pedidos: verificar se o pedido aparece na lista.
-
-Detalhe do pedido: acessar detalhes do pedido e validar informações.
