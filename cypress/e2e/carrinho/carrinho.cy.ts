@@ -52,7 +52,7 @@ describe('Fluxo de adicionar ao carrinho', () => {
     carrinhoPage.selecionarOpcao(produto.opcoes.cor[0]);
     carrinhoPage.adicionarAoCarrinho();
     carrinhoPage.abrirCarrinho();
-    carrinhoPage.validarProdutoNoCarrinho(produto.nome);
+    carrinhoPage.validarProdutoNoCarrinho(produto.nome); 
   });
 
 });
