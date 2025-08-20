@@ -101,9 +101,13 @@ Fluxos principais
 
 🔹 Cadastro de usuário
 
-Preencher formulário com os dados do usuário.
+Preencher formulário com os dados do usuário
 
-Validar sucesso do cadastro.
+Validar sucesso do cadastro
+
+Tentar cadastrar um usuário sem preencher todos os campos do formulário
+
+Validar a mensagen de erro exibida
 
 🔹Login
 
