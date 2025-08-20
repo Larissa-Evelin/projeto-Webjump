@@ -1,3 +1,50 @@
+# name: Cypress Tests
+
+# on:
+#   push:
+#     branches: [ main ]
+#   pull_request:
+
+# jobs:
+#   cypress-run:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout do código
+#         uses: actions/checkout@v3
+
+#       - name: Configurar Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: '20'
+
+#       - name: Instalar dependências
+#         run: npm ci
+
+#       - name: Instalar Cypress
+#         run: npx cypress install
+
+#       - name: Rodar testes Cypress no Chrome (headless)
+#         run: npx cypress run --browser chrome --headless
+
+#       - name: Gerar relatório Mochawesome
+#         run: |
+#           npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json
+#           npx mochawesome-report-generator cypress/reports/report.json -o cypress/reports/html
+
+#       - name: Fazer upload das screenshots em caso de falha
+#         if: failure()
+#         uses: actions/upload-artifact@v4
+#         with:
+#           name: cypress-screenshots
+#           path: cypress/screenshots/**/*.png
+
+#       - name: Fazer upload do relatório HTML
+#         uses: actions/upload-artifact@v4
+#         with:
+#           name: mochawesome-report
+#           path: cypress/reports/html
+
 name: Cypress Tests
 
 on:
@@ -19,18 +66,21 @@ jobs:
           node-version: '20'
 
       - name: Instalar dependências
-        run: npm ci
+        run: npm install
 
       - name: Instalar Cypress
         run: npx cypress install
 
-      - name: Rodar testes Cypress no Chrome (headless)
-        run: npx cypress run --browser chrome --headless
+      - name: Rodar testes Cypress com Mochawesome
+        run: |
+          npx cypress run --browser chrome --headless --record=false \
+            --reporter mochawesome \
+            --reporter-options reportDir=cypress/reports,json=true,overwrite=false,html=false
 
-      - name: Gerar relatório Mochawesome
+      - name: Gerar relatório HTML do Mochawesome
         run: |
           npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json
-          npx mochawesome-report-generator cypress/reports/report.json -o cypress/reports/html
+          npx marge cypress/reports/report.json -f report -o cypress/reports/html
 
       - name: Fazer upload das screenshots em caso de falha
         if: failure()
