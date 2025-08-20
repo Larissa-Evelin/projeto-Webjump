@@ -64,7 +64,7 @@ Se aparecer a versão, está tudo certo.
 
 # Instalação do Projeto
 
-1. Abrir o terminal no local onde deseja salvar o projeto.
+1. Abrir o terminal no local onde deseja salvar o projeto
 
 2. Clonar o repositório, digite no terminal:
 git clone git@github.com:Larissa-Evelin/projeto-DOT.git
@@ -94,6 +94,29 @@ npx cypress run
 > **Executa os testes diretamente no terminal**
 
 Usa o Chrome por padrão: npx cypress run --browser chrome
+
+## Ventos de CI/CD
+
+Sempre que o projeto é modificado e enviado com git push, o recurso do GitHub chamado Actions dispara automaticamente um job, executando a suíte de testes na pipeline.
+Para acompanhar, siga os passos abaixo:
+
+1. Abra o VSCode dentro do diretório do projeto
+
+2. Faça uma alteração simples no código (ex.: adicionar um espaço ou comentário)
+
+3. No terminal do VSCode, dentro da pasta do projeto, execute:
+
+ git add .
+
+4. Em seguida, faça o commit:
+
+git commit -m "Teste projeto"
+
+5. Agora envie para o repositório remoto:
+
+git push
+
+> **Acesse a aba Actions no GitHub para acompanhar a execução da pipeline e o resultado da suíte de testes.**
 
 ### Cenários de Teste
 
