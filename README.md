@@ -70,7 +70,7 @@ Se aparecer a versão, está tudo certo.
 git clone git@github.com:Larissa-Evelin/projeto-DOT.git
 
 3. Entrar na pasta do projeto:
-cd projeto-cypress
+cd projeto-DOT
 
 4. Instalar as dependências:
 npm install
