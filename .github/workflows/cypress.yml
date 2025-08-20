@@ -24,8 +24,8 @@ jobs:
       - name: Instalar Cypress
         run: npx cypress install
 
-      - name: Rodar testes Cypress no Chrome
-        run: npx cypress run --browser chrome --record=false
+      - name: Rodar testes Cypress no Chrome (headless)
+        run: npx cypress run --browser chrome --headless --record=false
 
       - name: Gerar relatório Mochawesome
         run: |
