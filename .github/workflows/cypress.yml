@@ -2,7 +2,7 @@ name: Cypress Tests
 
 on:
   push:
-    branches: [ main ]   # ou a branch que você quiser monitorar
+    branches: [ main ]
   pull_request:
 
 jobs:
@@ -24,5 +24,5 @@ jobs:
       - name: Instalar Cypress
         run: npx cypress install
 
-      - name: Rodar testes Cypress
-        run: npx cypress run
+      - name: Rodar testes Cypress no Chrome
+        run: npx cypress run --browser chrome
