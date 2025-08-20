@@ -28,7 +28,8 @@ jobs:
         run: npx cypress run --browser chrome
 
       - name: Fazer upload das imagens de erro
+        if: failure()  
         uses: actions/upload-artifact@v4
         with:
-          name: screenshots
+          name: cypress-screenshots
           path: cypress/screenshots/**/*.png
