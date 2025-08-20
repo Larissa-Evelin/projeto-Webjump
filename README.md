@@ -3,24 +3,6 @@
 ##  Objetivo
 Este projeto foi desenvolvido para criar e executar **cenários de testes automatizados** utilizando **Cypress** e **TypeScript**, seguindo **boas práticas de código** para manter os testes **claros, organizados e confiáveis**.
 
-Os principais fluxos automatizados são:
-
--  **Cadastro de usuário**
--  **Login**
--  **Adicionar produto ao carrinho**
--  **Finalização de compra**
-
-Cenários extras:
-
--  **Adicionar produto ao carrinho por outros caminhos:**
-  - Pela **página do produto**
-  - Pela **busca**
--  **Validação de pedido realizado:**
-  - Pela **lista de pedidos**
-  - Pelo **detalhe do pedido**
-
----
-
 ##  Pré-requisitos
 Antes de rodar o projeto, é necessário ter instalado no computador:
 
@@ -109,7 +91,7 @@ Para acompanhar, siga os passos abaixo:
 
 > **Obs:** Para que outro usuário possa modificar o projeto e visualizar a pipeline sendo executada, é necessário adicioná-lo como colaborador no meu repositório do GitHub. Dessa forma, ele terá permissão de escrita (write) e poderá realizar alterações e enviar (push) diretamente para o repositório.
 
-## Cenários de Teste
+## Cenários automatizados
 
 🔹 Cadastro de usuário
 
