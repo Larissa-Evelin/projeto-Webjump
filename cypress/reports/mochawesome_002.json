@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-20T14:55:22.727Z",
+    "end": "2025-08-20T14:56:08.585Z",
+    "duration": 45858,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "77264543-d969-4f55-b7c8-8a5d7fefe4e2",
+      "title": "",
+      "fullFile": "cypress/e2e/compra/finalizarCompra.cy.ts",
+      "file": "cypress/e2e/compra/finalizarCompra.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "eb0d20a8-2a87-449c-9fcd-0c24df490e41",
+          "title": "Fluxo de compra",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adicionar ao carrinho",
+              "fullTitle": "Fluxo de compra Adicionar ao carrinho",
+              "timedOut": null,
+              "duration": 15487,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const produto = produtos_json_1.produtos[0];\ncarrinhoPage.visitarProduto(produto.url);\ncy.wait(8000);\ncarrinhoPage.adicionarAoCarrinho();",
+              "err": {},
+              "uuid": "3dc92333-6ff6-479a-a017-b950c43a273b",
+              "parentUUID": "eb0d20a8-2a87-449c-9fcd-0c24df490e41",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve finalizar a compra com sucesso",
+              "fullTitle": "Fluxo de compra Deve finalizar a compra com sucesso",
+              "timedOut": null,
+              "duration": 30159,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const dadosEndereco = endereco_json_1.default;\ncarrinhoPage.abrirCarrinho();\ncy.wait(5000);\ncarrinhoPage.irParaCheckout();\ncy.wait(5000);\ncheckoutPage.clicarNext();\ncheckoutPage.preencherEndereco(dadosEndereco);\ncy.wait(5000);\ncheckoutPage.clicarNext();\ncheckoutPage.selecionarPagamento('checkmo');\ncheckoutPage.confirmarPedido();\ncheckoutPage.validarPedidoSucesso();",
+              "err": {},
+              "uuid": "d37b59ba-110d-420a-82d7-5f4ab627d3f0",
+              "parentUUID": "eb0d20a8-2a87-449c-9fcd-0c24df490e41",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3dc92333-6ff6-479a-a017-b950c43a273b",
+            "d37b59ba-110d-420a-82d7-5f4ab627d3f0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 45646,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

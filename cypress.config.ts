@@ -11,7 +11,7 @@ export default defineConfig({
     video: false,
     videosFolder: "cypress/videos",
     screenshotsFolder: "cypress/screenshots",
-    reporter: "mochawesome", // adiciona Mochawesome
+    reporter: "mochawesome", // adiciona Mochawesome 
     reporterOptions: {
       reportDir: "cypress/reports",
       overwrite: false,

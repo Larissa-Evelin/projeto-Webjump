@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-08-20T14:54:11.855Z",
+    "end": "2025-08-20T14:54:22.634Z",
+    "duration": 10779,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a48f8fec-b637-4c09-8337-ddb520f88e2b",
+      "title": "",
+      "fullFile": "cypress/e2e/cadastro/cadastroUsuario.cy.ts",
+      "file": "cypress/e2e/cadastro/cadastroUsuario.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "12edaad9-c5db-496d-bf47-36539a50bd98",
+          "title": "Cadastro de Usuário",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve cadastrar usuário",
+              "fullTitle": "Cadastro de Usuário Deve cadastrar usuário",
+              "timedOut": null,
+              "duration": 7879,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.readFile(\"cypress/fixtures/usuarios.json\").then((usuario) => {\n    usuario.email = (0, email_cy_1.gerarEmailUnico)(); // altera apenas o email e gera um email aleatório\n    const usuarioParaCadastro = Object.assign(Object.assign({}, usuario), { email: (0, email_cy_1.gerarEmailUnico)() });\n    cy.writeFile(\"cypress/fixtures/usuarios.json\", usuario); // salva o objeto completo de volta\n    cy.intercept('POST', '/customer/account/createpost').as('submitCadastro');\n    cadastroPage.visitar();\n    cadastroPage.preencherFormulario(usuario);\n    cadastroPage.submitCadastro();\n    cy.wait('@submitCadastro').then((interception) => {\n        var _a;\n        expect((_a = interception.response) === null || _a === void 0 ? void 0 : _a.statusCode).to.eq(302); // Confirma que houve redirecionamento\n    });\n    cadastroPage.validarCadastroSucesso();\n});",
+              "err": {},
+              "uuid": "c3bfb0c5-d84d-41f7-bad9-0ba8367486e3",
+              "parentUUID": "12edaad9-c5db-496d-bf47-36539a50bd98",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Não deve cadastrar usuário sem preencher todos os campos",
+              "fullTitle": "Cadastro de Usuário Não deve cadastrar usuário sem preencher todos os campos",
+              "timedOut": null,
+              "duration": 2692,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.intercept('POST', '/customer/account/createpost').as('submitCadastro'); // intercepta antes do submit\ncadastroPage.visitar();\ncadastroPage.submitCadastro();\ncadastroPage.ValidarMensagensDeErro();",
+              "err": {},
+              "uuid": "a778b7af-df6a-4a6e-ab62-72ec97b68650",
+              "parentUUID": "12edaad9-c5db-496d-bf47-36539a50bd98",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c3bfb0c5-d84d-41f7-bad9-0ba8367486e3",
+            "a778b7af-df6a-4a6e-ab62-72ec97b68650"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10571,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
