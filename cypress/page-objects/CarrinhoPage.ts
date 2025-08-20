@@ -16,8 +16,11 @@ export class CarrinhoPage {
     }
 
     adicionarDaListagem(nomeProduto: string) {
-      cy.contains('.product-item', nomeProduto, { timeout: 50000 }).click();
-      cy.get('button[title="Add to Cart"]', { timeout: 50000 }).click({ force: true });
+      cy.contains('.product-item', nomeProduto, { timeout: 50000 })
+      .first()
+      .click();
+      cy.wait(5000);
+      cy.get('button[title="Add to Cart"]', { timeout: 5000 }).click();
     }
 
     selecionarOpcao(nomeOpcao: string) {
