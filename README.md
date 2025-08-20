@@ -110,7 +110,7 @@ Para acompanhar, siga os passos abaixo:
 
 4. Em seguida, faça o commit:
 
-git commit -m "Teste projeto"
+git commit -m "Teste projeto" 
 
 5. Agora envie para o repositório remoto:
 
