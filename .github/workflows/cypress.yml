@@ -24,5 +24,11 @@ jobs:
       - name: Instalar Cypress
         run: npx cypress install
 
-      - name: Rodar testes Cypress no Chrome
+      - name: Rodar testes Cypress no Chrome (somente screenshots)
         run: npx cypress run --browser chrome
+
+      - name: Salvar screenshots como artefatos
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
