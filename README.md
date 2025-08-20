@@ -76,7 +76,6 @@ npm install
 1. Abrir Cypress com interface gráfica:
 npx cypress open
 
-
 > **Abre uma janela gráfica do Cypress**
 
 1. Selecione o navegador Chrome.
@@ -110,7 +109,7 @@ Para acompanhar, siga os passos abaixo:
 
 > **Obs:** Para que outro usuário possa modificar o projeto e visualizar a pipeline sendo executada, é necessário adicioná-lo como colaborador no meu repositório do GitHub. Dessa forma, ele terá permissão de escrita (write) e poderá realizar alterações e enviar (push) diretamente para o repositório.
 
-### Cenários de Teste
+## Cenários de Teste
 
 🔹 Cadastro de usuário
 
