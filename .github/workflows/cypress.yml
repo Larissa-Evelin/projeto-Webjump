@@ -13,7 +13,7 @@ jobs:
       - name: Checkout do código
         uses: actions/checkout@v3
 
-      - name: Instalar Node.js
+      - name: Configurar Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
@@ -25,11 +25,22 @@ jobs:
         run: npx cypress install
 
       - name: Rodar testes Cypress no Chrome
-        run: npx cypress run --browser chrome
+        run: npx cypress run --browser chrome --record=false
 
-      - name: Fazer upload das imagens de erro
-        if: failure()  
+      - name: Gerar relatório Mochawesome
+        run: |
+          npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json
+          npx marge cypress/reports/report.json -f report -o cypress/reports/html
+
+      - name: Fazer upload das screenshots em caso de falha
+        if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: cypress-screenshots
           path: cypress/screenshots/**/*.png
+
+      - name: Fazer upload do relatório HTML
+        uses: actions/upload-artifact@v4
+        with:
+          name: mochawesome-report
+          path: cypress/reports/html
