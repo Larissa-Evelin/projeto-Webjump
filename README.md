@@ -111,11 +111,11 @@ Validar a mensagen de erro exibida
 
 🔹Login
 
-Acessar a tela de login.
+Acessar a tela de login
 
-Inserir usuário e senha válidos.
+Inserir usuário e senha válidos
 
-Validar acesso ao sistema.
+Validar acesso ao sistema
 
 Inserir usuário e senha inválidos
 
