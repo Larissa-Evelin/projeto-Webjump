@@ -8,7 +8,7 @@ describe('Cadastro de Usuário', () => {
   beforeEach(() => {
     cy.clearCookies();
     cy.clearLocalStorage();
-    cy.reload(true); // força reload ignorando cache do navegador 
+    cy.reload(true); // força reload ignorando cache do navegador
   });
 
   it("Deve cadastrar usuário", () => {
