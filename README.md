@@ -40,7 +40,7 @@ Se aparecer a versão, está tudo certo.
 
 > **Link download npm:** https://www.npmjs.com/package/download
 
-# Instalação do Projeto
+# Instalação do projeto
 
 1. Abrir o terminal no local onde deseja salvar o projeto
 
