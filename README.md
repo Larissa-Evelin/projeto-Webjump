@@ -97,7 +97,8 @@ Usa o Chrome por padrão: npx cypress run --browser chrome
 
 ### Cenários de Teste
 
-🔹 Fluxos principais
+Fluxos principais
+
 🔹 Cadastro de usuário
 
 Preencher formulário com os dados do usuário.
