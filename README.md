@@ -139,4 +139,4 @@ Confirmar pedido
 
 Validação do pedido realizado
 
-> **Obs:** Na pasta doc encontram-se os steps em BDD. Optei por utilizar esse recurso apenas como documentação; não há nenhum vínculo com o Cypress, servindo apenas para registro e referência dos testes.
+> **Obs:** Na pasta doc no path: cypress/doc encontram-se os steps em BDD. Optei por utilizar esse recurso apenas como documentação; não há nenhum vínculo com o Cypress, servindo apenas para registro e referência dos testes.
