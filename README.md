@@ -72,7 +72,7 @@ npx cypress run
 
 Usa o Chrome por padrão: npx cypress run --browser chrome
 
-## Ventos de CI/CD
+## Eventos de CI/CD
 
 Sempre que o projeto é modificado e enviado com git push, o recurso do GitHub chamado Actions dispara automaticamente um job, executando a suíte de testes na pipeline.
 Para acompanhar, siga os passos abaixo:
