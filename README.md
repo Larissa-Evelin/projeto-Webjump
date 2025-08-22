@@ -45,10 +45,10 @@ Se aparecer a versão, está tudo certo.
 1. Abrir o terminal no local onde deseja salvar o projeto
 
 2. Clonar o repositório, digite no terminal:
-git clone git@github.com:Larissa-Evelin/projeto-DOT.git
+git clone git@github.com:Larissa-Evelin/projeto-Webjump.git
 
 3. Entrar na pasta do projeto:
-cd projeto-DOT
+cd projeto-Webjump
 
 4. Instalar as dependências:
 npm install
