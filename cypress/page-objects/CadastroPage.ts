@@ -27,26 +27,26 @@ export class CadastroPage {
     cy.contains('teste+').should('be.visible'); // valida email gerado
   }
 
-  ValidarMensagensDeErro(): Cypress.Chainable {
-    const verificar = (): Cypress.Chainable => {
-      return cy.get('div[data-bind*="prepareMessageForHtml"]', { timeout: 15000 })
-        .then(($el) => {
-          const texto = $el.text();
+  ValidarMensagensDeErro(): void {
+    const verificar = (): void => {
+    cy.get('div[data-bind*="prepareMessageForHtml"]', { timeout: 15000 })
+      .then(($el) => {
+        const texto = $el.text();
 
-          if (texto.includes('The password needs at least 8 characters. Create a new password and try again')) {
-            cy.log('Erro de senha curta detectado');
-            return cy.wrap($el).should('be.visible'); // chainable
-          } else if (texto.includes('Invalid Form Key. Please refresh the page.')) {
-            cy.log('Erro de Form Key detectado, atualizando a página...');
-            return cy.reload(true).then(() => verificar()); // chainable recursivo
-          }
-
-          // caminho padrão: não há erro, retorna chainable neutro
-          return cy.wrap(null);
-        });
+        if (texto.includes('The password needs at least 8 characters. Create a new password and try again')) {
+          cy.log('Erro de senha curta detectado');
+          cy.wrap($el).should('be.visible'); // não retornamos
+        } else if (texto.includes('Invalid Form Key. Please refresh the page.')) {
+          cy.log('Erro de Form Key detectado, atualizando a página...');
+          cy.reload(true).then(() => {
+            verificar(); // apenas chama recursivamente, sem return
+          });
+        }
+      });
     };
 
-    return verificar();
+   verificar(); // chama a função
   }
+
 
 }
