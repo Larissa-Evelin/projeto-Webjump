@@ -23,8 +23,8 @@ export class CadastroPage {
     cy.get('span[data-ui-id="page-title-wrapper"]', { timeout: 20000 })
       .should('be.visible')
       .and('contain.text', 'My Account');
-    cy.contains('Sasuke Uchiha').should('be.visible'); // do fixture
-    cy.contains('teste+').should('be.visible'); // valida email gerado
+    cy.contains('Sasuke Uchiha').should('be.visible'); 
+    cy.contains('teste+').should('be.visible'); 
   }
 
 ValidarMensagensDeErro(): void {
