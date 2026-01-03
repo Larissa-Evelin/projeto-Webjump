@@ -19,8 +19,11 @@ include:
 # Ignorar testes e artefatos gerados
 exclude:
   - name: All
-    paths:
-      - cypress
-      - cypress/reports
-      - "**/*.html"
+        paths:
+      - node_modules
+      - dist
+      - reports
+      - vscode
+      - support
+      - doc
 
