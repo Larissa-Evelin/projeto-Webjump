@@ -1,6 +1,6 @@
 import { CadastroPage } from '../../page-objects';
 import { gerarEmailUnico } from '../utils/email.cy';
-import { IUsuario } from '../../interfaces/IUsuario';
+import type { IUsuario } from '../../interfaces/IUsuario';
 
 describe('Cadastro de Usuário', () => {
   const cadastroPage = new CadastroPage();
