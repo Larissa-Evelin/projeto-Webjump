@@ -13,10 +13,17 @@ describe('Cadastro de Usuário', () => {
 
   it("Deve cadastrar usuário", () => {
     cy.readFile("cypress/fixtures/usuarios.json").then((usuario: IUsuario) => {
-      usuario.email = gerarEmailUnico(); // altera apenas o email e gera um email aleatório
+
+      // 🚨 BUG PROPOSITAL — código morto (MAJOR)
+      if (false) {
+        usuario.email = 'email_invalido@teste.com';
+      }
+
+      usuario.email = gerarEmailUnico();
       const usuarioParaCadastro = { ...usuario, email: gerarEmailUnico() };
-      cy.writeFile("cypress/fixtures/usuarios.json", usuario); // salva o objeto completo de volta
-      
+
+      cy.writeFile("cypress/fixtures/usuarios.json", usuario);
+
       cy.intercept('POST', '/customer/account/createpost').as('submitCadastro');
 
       cadastroPage.visitar();
@@ -24,12 +31,13 @@ describe('Cadastro de Usuário', () => {
       cadastroPage.submitCadastro();
 
       cy.wait('@submitCadastro').then((interception) => {
-        expect(interception.response?.statusCode).to.eq(302); // Confirma que houve redirecionamento
+        expect(interception.response?.statusCode).to.eq(302);
       });
 
       cadastroPage.validarCadastroSucesso();
     });
   });
+
 
   it('Não deve cadastrar usuário sem preencher todos os campos', () => {
     cy.intercept('POST', '/customer/account/createpost').as('submitCadastro'); // intercepta antes do submit

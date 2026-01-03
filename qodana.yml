@@ -7,13 +7,16 @@ linter: jetbrains/qodana-jvm:2025.2
 profile:
   name: qodana.recommended
 
+# Bloqueia PR com problemas relevantes novos
 failThreshold:
-  severity: CRITICAL
+  severity: MAJOR
   new: true
 
+# Auditoria de licenças
 include:
   - name: CheckDependencyLicenses
 
+# Ignorar testes e artefatos gerados
 exclude:
   - name: All
     paths:
