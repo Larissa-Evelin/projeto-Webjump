@@ -12,7 +12,7 @@ const produtos: IProduto[] = produtosJson;
 describe('Fluxo de adicionar ao carrinho', () => {
 
   beforeEach(() => {
-    const usuario: IUsuario = usuarios; // já é o objeto do fixture
+    const usuario: IUsuario = usuarios;
     loginPage.visitar();
     loginPage.preencherFormulario(usuario);
     loginPage.enviar();
