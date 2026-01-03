@@ -27,23 +27,24 @@ export class CadastroPage {
     cy.contains('teste+').should('be.visible'); // valida email gerado
   }
 
-  ValidarMensagensDeErro(): void {
-    const verificar = () => {
-      cy.get('div[data-bind*="prepareMessageForHtml"]', { timeout: 15000 }).then(($el) => {
-        const texto = $el.text();
+  alidarMensagensDeErro(): void {
+    const verificar = (): void => {
+      cy.get('div[data-bind*="prepareMessageForHtml"]', { timeout: 15000 })
+        .then(($el) => {
+          const texto = $el.text();
 
-        if (texto.includes('The password needs at least 8 characters. Create a new password and try again')) {
-          cy.log('Erro de senha curta detectado');
-          cy.wrap($el).should('be.visible'); 
-        }
+          if (texto.includes('The password needs at least 8 characters. Create a new password and try again')) {
+            cy.log('Erro de senha curta detectado');
+            void cy.wrap($el).should('be.visible'); // descarta retorno
+          }
 
-        if (texto.includes('Invalid Form Key. Please refresh the page.')) {
-          cy.log('Erro de Form Key detectado, atualizando a página...');
-          cy.reload(true).then(() => verificar()); // chama recursivamente
-        }
-      });
+          if (texto.includes('Invalid Form Key. Please refresh the page.')) {
+            cy.log('Erro de Form Key detectado, atualizando a página...');
+            void cy.reload(true).then(() => verificar()); // descarta retorno recursivo
+          }
+        });
     };
 
-    verificar(); // só chama, sem return
+    verificar(); // chama a função
   }
 }
