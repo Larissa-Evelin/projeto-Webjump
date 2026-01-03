@@ -2,22 +2,28 @@
 # WARNING: Do not store sensitive information in this file, as its contents will be included in the Qodana report. #
 ####################################################################################################################
 version: "1.0"
-linter: jetbrains/qodana-jvm:2025.2
+
+# Linter correto para Cypress (JS / TS)
+linter: jetbrains/qodana-js:2025.2
 
 profile:
   name: qodana.recommended
 
-failThreshold:
-  severity: CRITICAL
-  new: true
+# Bloqueia PR se existir QUALQUER problema novo
+# WARNING, MAJOR ou CRITICAL
+failThreshold: 0
 
+# Auditoria de licenças
 include:
   - name: CheckDependencyLicenses
 
+# Excluir apenas o que não deve ser analisado
 exclude:
   - name: All
     paths:
-      - cypress
+      - node_modules
+      - dist
       - cypress/reports
-      - "**/*.html"
+      - .vscode
+      - docs
 

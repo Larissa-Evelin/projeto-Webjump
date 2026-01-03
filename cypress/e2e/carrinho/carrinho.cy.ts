@@ -7,14 +7,12 @@ import { IUsuario } from '../../interfaces/IUsuario';
 
 const carrinhoPage = new CarrinhoPage();
 const loginPage = new LoginPage();
-const usuario = usuarios[0];
-
 const produtos: IProduto[] = produtosJson;
 
 describe('Fluxo de adicionar ao carrinho', () => {
 
- beforeEach(() => {
-    const usuario: IUsuario = usuarios; 
+  beforeEach(() => {
+    const usuario: IUsuario = usuarios;
     loginPage.visitar();
     loginPage.preencherFormulario(usuario);
     loginPage.enviar();
@@ -48,11 +46,18 @@ describe('Fluxo de adicionar ao carrinho', () => {
   it('Adicionar ao carrinho com seleção de tamanho e cor', () => {
     const produto: IProduto = produtos[3];
     carrinhoPage.visitarProduto(produto.url);
-    carrinhoPage.selecionarOpcao(produto.opcoes.tamanho[0]);
-    carrinhoPage.selecionarOpcao(produto.opcoes.cor[0]);
+
+    if (produto.opcoes?.tamanho) {
+      carrinhoPage.selecionarOpcao(produto.opcoes.tamanho[0]);
+    }
+    if (produto.opcoes?.cor) {
+      carrinhoPage.selecionarOpcao(produto.opcoes.cor[0]);
+    }
+
     carrinhoPage.adicionarAoCarrinho();
     carrinhoPage.abrirCarrinho();
     carrinhoPage.validarProdutoNoCarrinho(produto.nome); 
   });
+
 
 });

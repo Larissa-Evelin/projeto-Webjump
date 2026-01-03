@@ -1,6 +1,6 @@
 import { CadastroPage } from '../../page-objects';
 import { gerarEmailUnico } from '../utils/email.cy';
-import { IUsuario } from '../../interfaces/IUsuario';
+import type { IUsuario } from '../../interfaces/IUsuario';
 
 describe('Cadastro de Usuário', () => {
   const cadastroPage = new CadastroPage();
@@ -13,20 +13,26 @@ describe('Cadastro de Usuário', () => {
 
   it("Deve cadastrar usuário", () => {
     cy.readFile("cypress/fixtures/usuarios.json").then((usuario: IUsuario) => {
-      usuario.email = gerarEmailUnico(); // altera apenas o email e gera um email aleatório
-      const usuarioParaCadastro = { ...usuario, email: gerarEmailUnico() };
-      cy.writeFile("cypress/fixtures/usuarios.json", usuario); // salva o objeto completo de volta
+      // Gera um email único para cada teste
+      usuario.email = gerarEmailUnico();
       
+      // Salva o objeto atualizado no arquivo
+      cy.writeFile("cypress/fixtures/usuarios.json", usuario);
+
+      // Intercepta o POST do cadastro
       cy.intercept('POST', '/customer/account/createpost').as('submitCadastro');
 
+      // Preenche o formulário e envia
       cadastroPage.visitar();
       cadastroPage.preencherFormulario(usuario);
       cadastroPage.submitCadastro();
 
+      // Valida a resposta do backend
       cy.wait('@submitCadastro').then((interception) => {
-        expect(interception.response?.statusCode).to.eq(302); // Confirma que houve redirecionamento
+        expect(interception.response?.statusCode).to.eq(302); // Confirma redirecionamento
       });
 
+      // Valida sucesso no frontend
       cadastroPage.validarCadastroSucesso();
     });
   });

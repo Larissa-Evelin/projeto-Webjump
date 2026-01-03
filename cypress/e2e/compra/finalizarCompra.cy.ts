@@ -1,8 +1,6 @@
-import { CarrinhoPage } from '../../page-objects/CarrinhoPage';
-import { CheckoutPage } from '../../page-objects/CheckoutPage';
+import { CarrinhoPage, CheckoutPage, LoginPage } from '../../page-objects';
 import endereco from '../../fixtures/endereco.json';
 import { IEndereco } from '../../interfaces/IEndereco';
-import { LoginPage } from '../../page-objects';
 import usuarios from '../../fixtures/usuarios.json';
 import { IUsuario } from '../../interfaces/IUsuario';
 import { produtos as produtosJson } from '../../fixtures/produtos.json';
@@ -13,7 +11,7 @@ describe('Fluxo de compra', () => {
   const checkoutPage = new CheckoutPage();
   const loginPage = new LoginPage();
 
- beforeEach(() => {
+  beforeEach(() => {
     const usuario: IUsuario = usuarios; 
     loginPage.visitar();
     loginPage.preencherFormulario(usuario);
@@ -41,4 +39,4 @@ describe('Fluxo de compra', () => {
     checkoutPage.confirmarPedido();
     checkoutPage.validarPedidoSucesso();
   });
-}); 
+});
