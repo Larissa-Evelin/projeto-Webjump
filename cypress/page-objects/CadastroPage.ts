@@ -28,25 +28,22 @@ export class CadastroPage {
   }
 
   ValidarMensagensDeErro(): void {
-    const verificar = (): void => {
-      cy.get('div[data-bind*="prepareMessageForHtml"]', { timeout: 15000 })
-        .then(($el) => {
-          const texto = $el.text();
+    const verificar = () => {
+      cy.get('div[data-bind*="prepareMessageForHtml"]', { timeout: 15000 }).then(($el) => {
+        const texto = $el.text();
 
-          if (texto.includes('The password needs at least 8 characters. Create a new password and try again')) {
-            cy.log('Erro de senha curta detectado');
-            cy.wrap($el).should('be.visible'); // encadeia o Cypress sem retornar
-          } else if (texto.includes('Invalid Form Key. Please refresh the page.')) {
-            cy.log('Erro de Form Key detectado, atualizando a página...');
-            // recursão feita dentro de um .then, mas sem return para evitar alerta do Qodana
-            cy.reload(true).then(() => {
-              verificar(); 
-            });
-          }
-        });
+        if (texto.includes('The password needs at least 8 characters. Create a new password and try again')) {
+          cy.log('Erro de senha curta detectado');
+          cy.wrap($el).should('be.visible'); 
+        }
+
+        if (texto.includes('Invalid Form Key. Please refresh the page.')) {
+          cy.log('Erro de Form Key detectado, atualizando a página...');
+          cy.reload(true).then(() => verificar()); // chama recursivamente
+        }
+      });
     };
 
-    // Chama a função de verificação
-    verificar();
+    verificar(); // só chama, sem return
   }
 }
