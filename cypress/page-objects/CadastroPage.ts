@@ -1,12 +1,11 @@
-import { gerarEmailUnico } from '../e2e/utils/email.cy';
 import type { IUsuario } from '../interfaces/IUsuario';
 
 export class CadastroPage {
-  visitar() {
+  visitar(): void {
     cy.visit('/customer/account/create');
   }
 
-  preencherFormulario(usuario: IUsuario) {
+  preencherFormulario(usuario: IUsuario): void {
     cy.get('#firstname').type(usuario.nome);
     cy.get('#lastname').type(usuario.sobrenome || "");
     cy.get('#email_address').type(usuario.email);
@@ -14,22 +13,22 @@ export class CadastroPage {
     cy.get('#password-confirmation').type(usuario.senha);
   }
 
-  submitCadastro() {
+  submitCadastro(): void {
     cy.get('button[type="submit"]').eq(1).click();
   }
 
-  validarCadastroSucesso() {
+  validarCadastroSucesso(): void {
     cy.contains('Thank you for registering with Main Website Store.').should('be.visible');
     cy.contains('Thank you for registering').should('be.visible');
     cy.get('span[data-ui-id="page-title-wrapper"]', { timeout: 20000 })
       .should('be.visible')
       .and('contain.text', 'My Account');
-    cy.contains('Sasuke Uchiha').should('be.visible'); // se o nome estiver vindo do fixture
-    cy.contains('teste+').should('be.visible'); // valida o email gerado
+    cy.contains('Sasuke Uchiha').should('be.visible'); // do fixture
+    cy.contains('teste+').should('be.visible'); // valida email gerado
   }
 
-  ValidarMensagensDeErro() {
-    const verificar = (): void => {  // indica explicitamente que a função não retorna nada
+  ValidarMensagensDeErro(): void {
+    const verificar = (): void => {
       cy.get('div[data-bind*="prepareMessageForHtml"]', { timeout: 15000 })
         .then(($el) => {
           const texto = $el.text();
@@ -38,13 +37,10 @@ export class CadastroPage {
             cy.wrap($el).should('be.visible');
           } else if (texto.includes('Invalid Form Key. Please refresh the page.')) {
             cy.log('Erro de Form Key detectado, atualizando a página...');
-            cy.reload(true).then(() => {
-              verificar(); // chama a função de novo após recarregar
-            });
+            cy.reload(true).then(() => verificar());
           }
         });
     };
-
-    verificar(); // chama a função de verificação
+    verificar(); // chama a função
   }
 }
