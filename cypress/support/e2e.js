@@ -19,7 +19,4 @@
 import './commands'
 
   // Ignora erros do Magento/RequireJS
-Cypress.on('uncaught:exception', (err, runnable) => {
-
-  return false; 
-});
+Cypress.on('uncaught:exception', () => false);
