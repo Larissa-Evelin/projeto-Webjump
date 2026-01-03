@@ -3,25 +3,21 @@
 ####################################################################################################################
 version: "1.0"
 
-# Linter correto para Cypress / JS / TS
+# Linter correto para Cypress (JS / TS)
 linter: jetbrains/qodana-js:2025.2
 
 profile:
   name: qodana.recommended
 
-# Bloqueia o PR se existir QUALQUER problema novo
-# (WARNING, MAJOR ou CRITICAL)
+# Bloqueia PR se existir QUALQUER problema novo
+# WARNING, MAJOR ou CRITICAL
 failThreshold: 0
-
-# Considera apenas problemas NOVOS no PR
-baseline:
-  from: main
 
 # Auditoria de licenças
 include:
   - name: CheckDependencyLicenses
 
-# Exclusões corretas
+# Excluir apenas o que não deve ser analisado
 exclude:
   - name: All
     paths:
