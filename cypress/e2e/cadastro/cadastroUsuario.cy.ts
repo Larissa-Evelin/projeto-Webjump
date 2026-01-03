@@ -12,12 +12,13 @@ describe('Cadastro de Usuário', () => {
   });
 
   it("Deve cadastrar usuário", () => {
-    cy.readFile("cypress/fixtures/usuarios.json").then((usuario: IUsuario) => {
 
-      // 🚨 BUG PROPOSITAL — código morto (MAJOR)
-      if (false) {
-        usuario.email = 'email_invalido@teste.com';
-      }
+        // 🚨 BUG MAJOR proposital — variável nunca usada
+      const usuarioInutil = {
+      nome: 'Teste',
+      email: 'teste@teste.com'
+    };
+    cy.readFile("cypress/fixtures/usuarios.json").then((usuario: IUsuario) => {
 
       usuario.email = gerarEmailUnico();
       const usuarioParaCadastro = { ...usuario, email: gerarEmailUnico() };
